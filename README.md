@@ -1,42 +1,17 @@
-# archetype
+# Codebase for the blog post [#HOWTO: Create your own Maven Archetype in 5 simple steps](https://rieckpil.de/create-your-own-maven-archetype-in-5-simple-steps/)
 
-Esse projeto tem como finalidade crirar uma estrutura padrão para os projetos.
-Ele realiza a criação das seguintes pastas:
+Steps to run this project:
 
-- config
-- controller
-- domain
-- facade
-- repository
-- service
-- util
-
-Além disso cria duas classes:
-
-- StartController.java  -> Que configura uma API inicial da aplicação
-- StartApplication.java -> Que cria a inicialização da aplicação padrão.
-
-Por fim, possui um pom.xml com todas as dependências necessárias para um novo projeto 
-e um arquivo application.yml que configura a aplicação na porta 8080 com o nome Start Application e desabilita o service discovery do eureka.
-
-# Como utilizar
-
-Para utilizar é necessário baixar o projeto e executar o comando:
-
-mvn clean install
-
-Após isso é necessário criar o novo projeto com o seguinte comando:
-
-mvn archetype:generate -DarchetypeGroupId=br.com.archetype -DarchetypeArtifactId=custom-maven-archetype -DarchetypeVersion=1.0.0 -DgroupId=br.com.novoprojeto -DartifactId=novo-projeto -DinteractiveMode=false -DpackageAsDirectory=br/com/novoprojeto
-
-onde:
-
-- mvn archetype:generate -> Comando para geração do projeto
-- DarchetypeGroupId      -> Group ID do archetype
-- DarchetypeArtifactId   -> ArtifactoryID do archetype
-- DarchetypeVersion      -> versão do archetype
-- DgroupId               -> Group ID do novo projeto
-- DartifactId            -> Artifact ID do novo projeto
-- DinteractiveMode       -> Desabilita o modo de interação
-- DpackageAsDirectory    -> pasta do projeto separado por barras sem hifens
-
+1. Clone this Git repository
+2. Navigate to the folder `custom-maven-archetype`
+3. Publish the Archetype to your local repository with `mvn clean install`
+4. Use the Archetype to bootstrap a new project:
+```
+mvn archetype:generate \ 
+  -DarchetypeGroupId=de.rieckpil.archetypes \ 
+  -DarchetypeArtifactId=custom-maven-archetype \ 
+  -DarchetypeVersion=1.0.0 \ 
+  -DgroupId=de.rieckpil.blog \
+  -DartifactId=new-project \ 
+  -DinteractiveMode=false
+```
