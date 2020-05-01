@@ -1,3 +1,5 @@
+#set( $dollar = '$' )
+
 server:
   port: 8080
 
@@ -5,6 +7,20 @@ spring:
   application:
     name: Start Application
 
+security:
+  oauth2:
+    resource:
+      id: start-application
+
 eureka:
   client:
-    enabled: false
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      dafaultZone: http://${dollar}{eureka.instance.hostname:localhost}:${dollar}{server.port:8761}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

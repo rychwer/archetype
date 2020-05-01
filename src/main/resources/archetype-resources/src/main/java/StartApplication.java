@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("br.com.server.resource")
+@ComponentScan({"br.com.server.resource", "${groupId}"})
 public class StartApplication {
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
