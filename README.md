@@ -1,6 +1,3 @@
-# archetype	# Codebase for the blog post [#HOWTO: Create your own Maven Archetype in 5 simple steps](https://rieckpil.de/create-your-own-maven-archetype-in-5-simple-steps/)
-
-
 Esse projeto tem como finalidade crirar uma estrutura padrão para os projetos.	Steps to run this project:
 Ele realiza a criação das seguintes pastas:	
 
